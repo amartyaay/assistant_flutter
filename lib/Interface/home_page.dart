@@ -14,6 +14,7 @@ class HomePage extends HookConsumerWidget {
       ),
       body: Column(
         children: [
+          //Assistant picture
           Stack(
             children: [
               Center(
@@ -40,8 +41,56 @@ class HomePage extends HookConsumerWidget {
               ),
             ],
           ),
+
+          //Chat bubble
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            margin: const EdgeInsets.symmetric(horizontal: 40).copyWith(top: 30),
+            decoration: BoxDecoration(
+              border: Border.all(color: ColorsTheme.borderColor),
+              borderRadius: BorderRadius.circular(20).copyWith(topLeft: Radius.zero),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10.0),
+              child: Text(
+                '${getGreeting()}, what can I do for you?',
+                style: const TextStyle(
+                  color: ColorsTheme.mainFontColor,
+                  fontSize: 25,
+                  fontFamily: 'Cera Pro',
+                ),
+              ),
+            ),
+          ),
+
+          //Suggestions Text
+          Container(
+            alignment: Alignment.centerLeft,
+            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.only(top: 10, left: 22),
+            child: const Text(
+              'Here are a few suggestions',
+              style: TextStyle(
+                fontFamily: 'Cera Pro',
+                fontSize: 20,
+                color: ColorsTheme.mainFontColor,
+              ),
+            ),
+          ),
         ],
       ),
     );
+  }
+}
+
+String getGreeting() {
+  DateTime time = DateTime.now();
+  int hour = time.hour;
+  if (hour > 0 && hour < 12) {
+    return 'Good Morning';
+  } else if (hour > 12 && hour < 17) {
+    return 'Good Afternoon';
+  } else {
+    return 'Good Evening';
   }
 }
