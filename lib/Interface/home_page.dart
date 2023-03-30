@@ -1,4 +1,5 @@
 import 'package:assistant/constants/color.dart';
+import 'package:assistant/widgets/feature_box.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -77,7 +78,27 @@ class HomePage extends HookConsumerWidget {
               ),
             ),
           ),
+          Column(
+            children: const [
+              FeatureBox(
+                  color: ColorsTheme.firstSuggestionBoxColor,
+                  headerText: 'ChatGPT',
+                  descriptionText: 'Get Information from ChatGPT'),
+              FeatureBox(
+                  color: ColorsTheme.secondSuggestionBoxColor,
+                  headerText: 'Dall-E',
+                  descriptionText: 'Get Images from Dall-E'),
+              FeatureBox(
+                  color: ColorsTheme.thirdSuggestionBoxColor,
+                  headerText: 'TTS',
+                  descriptionText: 'Text2Speech and Speech2Text'),
+            ],
+          ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.mic),
       ),
     );
   }
