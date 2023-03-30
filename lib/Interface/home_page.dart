@@ -1,4 +1,4 @@
-import 'package:assitant/constants/color.dart';
+import 'package:assistant/constants/color.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -24,6 +24,17 @@ class HomePage extends HookConsumerWidget {
                   decoration: const BoxDecoration(
                     color: ColorsTheme.assistantCircleColor,
                     shape: BoxShape.circle,
+                  ),
+                ),
+              ),
+              Container(
+                height: 123,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    image: AssetImage(
+                      'assets/images/virtualAssistant.png',
+                    ),
                   ),
                 ),
               ),

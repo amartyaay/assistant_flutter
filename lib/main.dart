@@ -1,5 +1,5 @@
-import 'package:assitant/Interface/home_page.dart';
-import 'package:assitant/constants/color.dart';
+import 'package:assistant/Interface/home_page.dart';
+import 'package:assistant/constants/color.dart';
 import 'package:flutter/material.dart';
 
 void main() {
